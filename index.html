@@ -39,21 +39,21 @@
     /* ================================
        HEADER
     ================================= */
-    
-
 
 header {
-  background: url("Images/Nomo.jpeg") center / cover no-repeat;
+  background-image: url("Images/Nomo.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 100vh;
   min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-
-@media (max-width: 768px) {
-  header {
-    background-position: top center;
-  }
-}
-
-
 
     header::before {
       content: "";
