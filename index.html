@@ -39,16 +39,21 @@
     /* ================================
        HEADER
     ================================= */
-    header {
-      background: url("Images/Nomo.jpeg") center / cover no-repeat;
-      height: 90vh;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-    }
+    
+header {
+  background-image: url("Images/Nomo.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  min-height: 100svh;
+  background-color: #000; /* fills empty space */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
     header::before {
       content: "";
