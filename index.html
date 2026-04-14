@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nomo Trading & Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      background: url('img/Nomo.jpeg') no-repeat center center/cover;
+      height:60vh;
+      color: #645c5c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      /* Magic: gentle zoom + shift animation of the background */
+      animation: bgAnim 10s ease infinite alternate;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    header .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #171616;
+      text-align: center;
+      padding: 10px 0;
+      background-color: rgb(30, 50, 66);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e91e63;
+    }
+
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+
+     .zoom-container {
+      overflow: hidden;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Initial fade-in when page loads */
+    .zoom-container img {
+      width: 100%;
+      opacity: 0;
+      transform: scale(1); /* No zoom initially */
+      transition: transform 1s ease-out, opacity 1s ease-out;
+      animation: fadeIn 1s forwards;
+    }
+
+    /* Zoom effect on hover */
+    .zoom-container img:hover {
+      transform: scale(1.2); /* Zoom to 120% on hover */
+    }
+
+    /* Fade-in keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+	  
+    
+section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            background-image: -moz-linear-gradient();
+            position: relative;
+            
+          }
+
+
+.image-text-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: #ebeeef;
+     background: url('img/Background.jpg') no-repeat center center/cover;
+}
+
+/* Image styling */
+.image-text-section .img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    height: 300px;
+}
+
+/* Text styling */
+.image-text-section .text {
+    max-width: 600px;
+}
+
+.image-text-section h2 {
+    color: #ff381e;
+    margin-bottom: 10px;
+}
+
+.image-text-section p {
+    line-height: 1.6;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .image-text-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.Divide{
+  position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #0f0a0a;
+      text-align: center;
+      padding: 5px 0;
+      background-color: rgb(12, 28, 60);
+      image-rendering: crisp-edges;
+      left: 25%;
+}
+
+
+
+.slider {
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fdf7f7;
+    white-space: nowrap;
+}
+
+.slider span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: slide-left 20s linear infinite;
+}
+
+/* Slide text to the left */
+@keyframes slide-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.Services-Back{
+width: 100%;
+}
+.Services-Back img{
+  
+ width: 100%;
+    height: auto;
+    display: block;
+}
+
+.Services {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: #ebeeef;    
+    
+}
+
+/* Image styling */
+.Services .img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    height: 300px;
+}
+
+/* Text styling */
+.Services .Services-text {
+    max-width: 600px;
+}
+
+.Services h2 {
+    color: #ff381e;
+    margin-bottom: 10px;
+}
+
+.Services p {
+    line-height: 1.6;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .Services {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+  .Services::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.1);
+    }
+.Service-Head{
+  text-align: center;
+  color:  #ffba0a;
+  background: #888686;
+  background: url('img/Background1.jpg') no-repeat center center/cover;
+}
+
+
+.read-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #47fa0b;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    background-color: #efefef;
+}
+
+.Construct{
+   position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #fffdfd;
+      text-align: center;
+      padding: 10px 0;
+      background-color: rgb(215, 216, 217);
+}
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="Home.html">Home</a>
+  <a href="Construction.html">Services</a>
+  <a href="About.html">About Us</a>
+  <a href="Quote">Get A Quote</a>
+  <a href="#contact">Contact Us</a>
+</nav>
+
+<header>
+  <div class="header-content">
+    
+  </div>
+</header>
+<nav class="Divide">
+
+<div class="slider">
+    <span>Values: “To be one of the major contributors in the construction and oil industries”</span>
+</div>
+
+</nav>
+
+<section class="image-text-section">
+    <div class="img">
+        <img src="img/TeamNomo.jpg" alt="Our Team">
+    </div>
+
+    <div class="text">
+        <h2>Nomo Trading & Projects</h2>
+        <p>
+            Nomo Trading and Projects is a company that is 100% blackowned. The company was established in 2011. It is a privateregistered company that boast 50% woman shareholding. NomoTrading is located in Malelane, Mpumalanga province under theNkomazi Local Municipality. Nomo Trading and Projects operatesin Construction
+and Cleaning services.
+        </p>
+      </div>
+</section>
+
+  <h1 class="Service-Head">
+    Nomo Trading & Projects
+  </h1>
+
+<section class="Services" id="Service">
+  <article>
+    <div class="img">
+        <img src="img/Contract1.jpg" alt="Our Team">
+    </div>
+
+    <div class="Services-text">
+        <h2>The Construction and Maintenance business</h2>
+        <p>
+            Nomo Trading and Projects is dedicated to providing excellent services, supplies and advice since 2011. Drawing on its base of experiencedand skilled labour as well as up-to-dateequipment and other materialresources, Nomo Trading and Projectsis able to deliver quality serviceexpeditiously and seamlessly.
+        </p>
+    </div>
+    <nav class="Construct">
+    <a href="Construction.html" class="read-more-btn">Read More</a>
+    </nav>
+    <div>
+    
+    </div>
+    </article>
+
+    <article>
+    <div class="img">
+        <img src="img/Clean.jpeg" alt="Our Team">
+    </div>
+
+    <div class="Services-text">
+        <h2>The Cleaning Business</h2>
+        <p>
+            We provide holistic (Garbage, Sanitary bins andJanitorial) cleaning services to commercial, industrialand residential properties in South Africa. Ourcleaning services focus on client specific andmeasurable outcomes which directly participates inthe improvement of the client’s perfomance,reputation and competitiveness.
+We provide cleaning services tailored to suit eachclient with the wide range of services listed below:
+    </div>
+    <nav class="Construct">
+    <a href="Cleaning.html" class="read-more-btn">Read More</a>
+    </nav>
+    <div>
+    
+    </div>
+    </article>
+
+    <article>
+    <div class="img">
+        <img src="img/Fuel.jpg" alt="Our Team">
+    </div>
+
+    <div class="Services-text">
+        <h2>The Fuel Business</h2>
+        <p>
+            Nomo Trading and Projects is in the industry to provide a wide range of quality and safe diesel as well as other fuel related products. We are in the diesel distribution and supply industry to make profits and we will ensure that we do all that is permitted by the law in South Africa, to achieve our business aim and objective.
+        <a href="Contstruction.html">Read More>>></a>
+    </div>
+    <div>
+    
+    </div>
+    </article>
+</section>
+
+<!-- Footer with Social Links -->
+<footer id="contact">
+  <p>📞 Phone: <a href="tel:+27762662528" style="color: #ccc;">+27762662528</a></p>
+  <p>📱 WhatsApp: <a href="https://wa.me/+27762662528" target="_blank" style="color: #ccc;">Chat with us</a></p>
+  <p>📧 Email: <a href="mailto:cgumbi@nomoprojects.co.za" style="color: #ccc;">cgumbi@nomoprojects.co.za</a></p>
+  <p>&copy; 2011 NOMO TRADING AND PROJECTS. All rights reserved.</p>
+</footer>
+
+<script type="text/javascript">
+  // Initialize EmailJS with your User ID (Replace with your actual user ID from EmailJS)
+  (function () {
+    emailjs.init("2D90Dl0QS7IfvW3tN");  // Replace with your EmailJS user ID
+  })();
+
+  // Handle the form submission
+  document.getElementById('booking-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+
+    // Get form data
+    var formData = new FormData(this);
+
+    // Send email using EmailJS
+    emailjs.sendForm('service_v4ktjuu', 'template_kx3eo28', this)  // Replace with your actual Service ID and Template ID
+      .then(function(response) {
+        console.log('Success:', response);
+        alert('Your Order has been submitted successfully! We will get in touch with you soon.');
+      })
+      .catch(function(error) {
+        console.log('Error:', error);
+        alert('Sorry, there was an issue submitting your Order. Please try again later.');
+      });
+  });
+</script>
+
+</body>
+</html>
