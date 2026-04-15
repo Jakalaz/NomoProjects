@@ -54,35 +54,55 @@
     }
 
 
- nav {
+  nav {
       position: sticky;
       top: 0;
       z-index: 999;
-      background: #eee9e9;
+      background: linear-gradient(90deg, #0b3c5d, #d7263d);
+      padding: 14px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       text-align: center;
-      padding: 10px 0;
-      background-color: rgb(134, 0, 0);
     }
 
     nav a {
       color: #ffffff;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 18px;
       font-weight: 600;
-      transition: color 0.3s;
+      letter-spacing: 0.5px;
+      transition: color 0.3s, border-bottom 0.3s;
     }
 
     nav a:hover {
-      color: #2b00ff;
+      color: #eaf2ff;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 4px;
     }
 
 
-     footer {
-      background: #080a0e;
-      color: #ff0000;
+  footer {
+      background: linear-gradient(90deg, #0b3c5d, #1e6091);
+      color: #ffffff;
       text-align: center;
-      padding: 20px 0;
+      padding: 28px 15px;
       margin-top: 60px;
+      border-top: 4px solid #d7263d;
+    }
+
+    footer a {
+      color: #ffccd5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+      font-size: 14px;
     }
 	     
 
@@ -231,7 +251,7 @@ section {
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
+  <a href="Home.html">Home</a>
   <a href="Services.html">Services</a>
   <a href="About.html">About Us</a>
   <a href="Contact.html">Contact Us</a>
@@ -277,6 +297,7 @@ We provide cleaning services tailored to suit eachclient with the wide range of 
         <br>
         ✅General and Deep Cleaning</li>
       </ul>
+
     </div>
 </section>
 
@@ -338,7 +359,6 @@ We provide cleaning services tailored to suit eachclient with the wide range of 
   <p>📧 Email: <a href="mailto:cgumbi@nomoprojects.co.za" style="color: #ccc;">cgumbi@nomoprojects.co.za</a></p>
   <p>&copy; 2011 – Present | Nomo Trading and Projects</p>
 </footer>
-
 
 </body>
 </html>
