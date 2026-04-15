@@ -25,7 +25,7 @@
 
     header {
       position: relative;
-      background: url('img/service-5.jpg') no-repeat center center/cover;
+      background: url('img/GeneralB.jpg') no-repeat center center/cover;
       height:80vh;
       color: #645c5c;
       display: flex;
@@ -43,7 +43,6 @@
       top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: 1;
-      background: rgba(0, 0, 0, 0.4);
     }
 
     header .header-content {
@@ -286,6 +285,26 @@ width: 100%;
     background-color: #ff0000;
 }
 
+.services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .service {
+      flex: 1 1 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .service h4 {
+      margin-bottom: 10px;
+      color: #e91e63;
+    }
 
   </style>
 </head>
@@ -303,67 +322,41 @@ width: 100%;
     
   </div>
 </header>
-<nav class="Divide">
-
-
-
-</nav>
-
 
 
   <h1 class="Service-Head">
    The Construction and Maintenance business
   </h1>
 
-<section class="Services">
-  <article>
-    <div class="img">
-        <img src="img/GeneralB.jpg" alt="Our Team">
-    </div>
-
-    <div class="Services-text">
-        <h2>General Building</h2>
-        <p>
-            Our General Building service provides end-to-end construction management, transforming architectural designs into move-in-ready structures. We act as a single point of contact, overseeing everything from initial site preparation and structural framing to final interior finishes.
-        </p>
-        
-    </div>
-    <div>
-    
-    </div>
+<section id="services">
+   <div class="zoom-container">
+    <article class="service">
+      <img src="img/GeneralB.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>General Building</h4>
+         <p>
+        Our General Building service provides end-to-end construction management, transforming architectural designs into move-in-ready structures. We act as a single point of contact, overseeing everything from initial site preparation and structural framing to final interior finishes.
+         </p>
     </article>
 
-    <article>
-    <div class="img">
-        <img src="img/CivilW.jpg" alt="Our Team">
-    </div>
-
-    <div class="Services-text">
-        <h2>Civil Works</h2>
-        <p>
-            Our Civil Works division provides the essential engineering and infrastructure that form the backbone of any construction project. We specialize in transforming raw land into build-ready sites by managing large-scale earthworks, site stabilization, and the installation of critical utility networks.
-    </div>
-    <div>
-    
-    </div>
+    <article class="service">
+      <img src="img/CivilW.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>Civil Works</h4>
+         <p>
+        Our Civil Works division provides the essential engineering and infrastructure that form the backbone of any construction project. We specialize in transforming raw land into build-ready sites by managing large-scale earthworks, site stabilization, and the installation of critical utility networks.
+         </p>
     </article>
 
-    <article>
-    <div class="img">
-        <img src="img/RenovationS.jpg" alt="Our Team">
-    </div>
-
-    <div class="Services-text">
-        <h2>Renovation Services</h2>
-        <p>
-            Our Renovation service focuses on transforming and modernizing existing structures to enhance their value, functionality, and aesthetic appeal. We specialize in everything from structural alterations and space reconfiguration to high-end interior updates and restorative work.
-        </p>
-    </div>
-    <div>
-    
-    </div>
+    <article class="service">
+      <img src="img/RenovationS.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>Civil Works</h4>
+         <p>
+        Our Renovation service focuses on transforming and modernizing existing structures to enhance their value, functionality, and aesthetic appeal. We specialize in everything from structural alterations and space reconfiguration to high-end interior updates and restorative work.
+         </p>
     </article>
-</section>
+
+    </div>
+  </section>
+
 <a href="Home.html#services" class="Back-btn">Back</a>
 
 <!-- Footer with Social Links -->
