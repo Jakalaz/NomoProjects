@@ -2,158 +2,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Nomo Trading and Projects</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Nomo Trading and Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.7;
-        }
+    body {
+      background: linear-gradient(135deg, #f5f9ff, #ffffff);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
 
-        .about-container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 40px;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .about-header h1 {
-            font-size: 36px;
-            color: #1d3557;
-            margin-bottom: 10px;
-        }
-
-        .about-header p {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .section {
-            margin-bottom: 35px;
-        }
-
-        .section h2 {
-            font-size: 24px;
-            color: #1d3557;
-            margin-bottom: 15px;
-            border-left: 5px solid #457b9d;
-            padding-left: 15px;
-        }
-
-        .section p {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #444;
-        }
-
-        .highlight-box {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .card h3 {
-            color: #457b9d;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .values-list {
-            list-style: none;
-            columns: 2;
-            font-size: 15px;
-        }
-
-        .values-list li {
-            margin-bottom: 8px;
-            padding-left: 15px;
-            position: relative;
-        }
-
-        .values-list li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: #1d3557;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #777;
-        }
-
-        @media (max-width: 600px) {
-            .values-list {
-                columns: 1;
-            }
-        }
-
+    /* ================= NAVIGATION ================= */
     nav {
       position: sticky;
       top: 0;
       z-index: 999;
-      background: #eee9e9;
+      background: linear-gradient(90deg, #0b3c5d, #d7263d);
+      padding: 14px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       text-align: center;
-      padding: 10px 0;
-      background-color: rgb(134, 0, 0);
     }
 
     nav a {
       color: #ffffff;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 18px;
       font-weight: 600;
-      transition: color 0.3s;
+      letter-spacing: 0.5px;
+      transition: color 0.3s, border-bottom 0.3s;
     }
 
     nav a:hover {
-      color: #2b00ff;
-    }
-    
-    footer {
-      background: #9c2d2d;
-      color: #4fdfdb;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 60px;
+      color: #eaf2ff;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 4px;
     }
 
-    </style>
+    /* ================= MAIN CONTAINER ================= */
+    .about-container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 45px;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(11, 60, 93, 0.2);
+      border-top: 6px solid #d7263d;
+    }
+
+    /* ================= HEADER ================= */
+    .about-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .about-header h1 {
+      font-size: 38px;
+      color: #0b3c5d;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .about-header h1::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #0b3c5d, #d7263d);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 4px;
+    }
+
+    /* ================= SECTIONS ================= */
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 26px;
+      color: #0b3c5d;
+      margin-bottom: 18px;
+      border-left: 6px solid #d7263d;
+      padding-left: 16px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    /* ================= CARDS ================= */
+    .highlight-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #f4f8ff;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(11, 60, 93, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 5px solid #0b3c5d;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(215, 38, 61, 0.25);
+      border-top-color: #d7263d;
+    }
+
+    .card h3 {
+      color: #0b3c5d;
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    /* ================= VALUES ================= */
+    .values-list {
+      list-style: none;
+      columns: 2;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .values-list li {
+      margin-bottom: 10px;
+      padding-left: 22px;
+      position: relative;
+      color: #333;
+    }
+
+    .values-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #d7263d;
+      font-weight: bold;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: linear-gradient(90deg, #0b3c5d, #1e6091);
+      color: #ffffff;
+      text-align: center;
+      padding: 28px 15px;
+      margin-top: 60px;
+      border-top: 4px solid #d7263d;
+    }
+
+    footer a {
+      color: #ffccd5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 600px) {
+      .values-list {
+        columns: 1;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <nav>
@@ -166,66 +203,64 @@
 
 <div class="about-container">
 
-    <div class="about-header">
-        <h1>About Us</h1>
+  <div class="about-header">
+    <h1>About Us</h1>
+  </div>
+
+  <div class="section">
+    <h2>Company Background</h2>
+    <p>
+      <strong>Nomo Trading and Projects</strong> is a 100% black-owned, private registered company
+      established in 2011. The company proudly boasts 50% woman shareholding, reflecting its
+      commitment to inclusivity and empowerment.
+    </p>
+    <p>
+      Nomo Trading and Projects is located in <strong>Malelane, Mpumalanga Province</strong>,
+      operating under the <strong>Nkomazi Local Municipality</strong>. The company specializes in
+      <strong>Construction</strong> and <strong>Cleaning Services</strong>.
+    </p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To be one of the major contributors in the construction and oil industries,
+        recognized for quality, reliability, and sustainable development.
+      </p>
     </div>
 
-    <div class="section">
-        <h2>Company Background</h2>
-        <p>
-            <strong>Nomo Trading and Projects</strong> is a 100% black-owned, private registered company
-            established in 2011. The company proudly boasts 50% woman shareholding, reflecting its
-            commitment to inclusivity and empowerment.
-        </p>
-        <p>
-            Nomo Trading and Projects is located in <strong>Malelane, Mpumalanga Province</strong>,
-            operating under the <strong>Nkomazi Local Municipality</strong>.
-            The company specializes in <strong>Construction</strong> and
-            <strong>Cleaning Services</strong>, delivering dependable and professional solutions
-            to both public and private sector clients.
-        </p>
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To provide excellent, high-quality, and cost-effective services while adhering
+        to environmental and safety regulations and caring for our employees.
+      </p>
     </div>
+  </div>
 
-    <div class="highlight-box">
-        <div class="card">
-            <h3>Our Vision</h3>
-            <p>
-                To be one of the major contributors in the construction and oil industries,
-                recognized for quality, reliability, and sustainable development.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Our Mission</h3>
-            <p>
-                To provide excellent, high-quality, and cost-effective services while strictly
-                adhering to environmental and safety regulations, and ensuring our employees are
-                well cared for at all times.
-            </p>
-        </div>
-    </div>
-
-    <div class="section" style="margin-top: 40px;">
-        <h2>Our Values</h2>
-        <ul class="values-list">
-            <li>Health, Safety and Environment</li>
-            <li>Reliability</li>
-            <li>Customer Centric Approach</li>
-            <li>Quality Service Delivery</li>
-            <li>Integrity</li>
-            <li>Employee Wellbeing</li>
-            <li>Community Development</li>
-        </ul>
-    </div>
-
-<footer id="contact">
-  <p>📞 Phone: <a href="tel:+27762662528" style="color: #ccc;">+27762662528</a></p>
-  <p>📱 WhatsApp: <a href="https://wa.me/+27762662528" target="_blank" style="color: #ccc;">Chat with us</a></p>
-  <p>📧 Email: <a href="mailto:cgumbi@nomoprojects.co.za" style="color: #ccc;">cgumbi@nomoprojects.co.za</a></p>
-  <p>&copy; 2011 – Present | Nomo Trading and Projects</p>
-</footer>
-
+  <div class="section" style="margin-top: 45px;">
+    <h2>Our Values</h2>
+    <ul class="values-list">
+      <li>Health, Safety and Environment</li>
+      <li>Reliability</li>
+      <li>Customer Centric Approach</li>
+      <li>Quality Service Delivery</li>
+      <li>Integrity</li>
+      <li>Employee Wellbeing</li>
+      <li>Community Development</li>
+    </ul>
+  </div>
 
 </div>
 
+<footer id="contact">
+  <p>📞 Phone: <a href="tel:+27762662528">+27 76 266 2528</a></p>
+  <p>📱 WhatsApp: <a href="https://wa.me/27762662528" target="_blank">Chat with us</a></p>
+  <p>📧 Email: <a href="mailto:cgumbi@nomoprojects.co.za">cgumbi@nomoprojects.co.za</a></p>
+  <p>&copy; 2011 – Present | Nomo Trading and Projects</p>
+</footer>
+
 </body>
+</html>
+``
