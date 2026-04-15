@@ -77,13 +77,14 @@
     }
 
 
-    footer {
-      background: #111;
-      color: #ccc;
+     footer {
+      background: #080a0e;
+      color: #ff0000;
       text-align: center;
       padding: 20px 0;
       margin-top: 60px;
     }
+	     
 
      .zoom-container {
       overflow: hidden;
@@ -393,7 +394,7 @@ We provide cleaning services tailored to suit eachclient with the wide range of 
     <div class="Services-text">
         <h2>General and Deep Cleaning</h2>
         <p>
-            Our General and Deep Cleaning service offers a tiered approach to sanitation, ensuring your facility remains both visually pristine and hygienically safe. We provide flexible solutions that range from essential daily upkeep to intensive, specialized cleaning projects.         
+           Our deep cleaning services areavailable for stains on walls, dustremoval from window grills, wallcleaning, mirror cleaning, floor cleaning, cabinet and shelves aswell as cleaning of balconies, outdoor patios and floors andother items. All our deep andgeneral cleaning is done with ananti-bacterial cleaning solution.         
         </p>
     </div>
     <div>
@@ -402,7 +403,7 @@ We provide cleaning services tailored to suit eachclient with the wide range of 
     </article> 
 
 </section>
-<a href="Home.html#Service" class="Back-btn">Back</a>
+<a href="Home.html#services" class="Back-btn">Back</a>
 
 <!-- Footer with Social Links -->
 <footer id="contact">
@@ -411,32 +412,6 @@ We provide cleaning services tailored to suit eachclient with the wide range of 
   <p>📧 Email: <a href="mailto:cgumbi@nomoprojects.co.za" style="color: #ccc;">cgumbi@nomoprojects.co.za</a></p>
   <p>&copy; 2011 NOMO TRADING AND PROJECTS. All rights reserved.</p>
 </footer>
-
-<script type="text/javascript">
-  // Initialize EmailJS with your User ID (Replace with your actual user ID from EmailJS)
-  (function () {
-    emailjs.init("2D90Dl0QS7IfvW3tN");  // Replace with your EmailJS user ID
-  })();
-
-  // Handle the form submission
-  document.getElementById('booking-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from refreshing the page
-
-    // Get form data
-    var formData = new FormData(this);
-
-    // Send email using EmailJS
-    emailjs.sendForm('service_v4ktjuu', 'template_kx3eo28', this)  // Replace with your actual Service ID and Template ID
-      .then(function(response) {
-        console.log('Success:', response);
-        alert('Your Order has been submitted successfully! We will get in touch with you soon.');
-      })
-      .catch(function(error) {
-        console.log('Error:', error);
-        alert('Sorry, there was an issue submitting your Order. Please try again later.');
-      });
-  });
-</script>
 
 </body>
 </html>
