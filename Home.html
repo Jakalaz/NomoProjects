@@ -58,14 +58,14 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      background: #171616;
+      background: #eee9e9;
       text-align: center;
       padding: 10px 0;
-      background-color: rgb(30, 50, 66);
+      background-color: rgb(134, 0, 0);
     }
 
     nav a {
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
       margin: 0 15px;
       font-weight: 600;
@@ -73,49 +73,18 @@
     }
 
     nav a:hover {
-      color: #e91e63;
+      color: #2b00ff;
     }
 
 
     footer {
-      background: #111;
-      color: #ccc;
+      background: #080a0e;
+      color: #2b00ff;
       text-align: center;
       padding: 20px 0;
       margin-top: 60px;
     }
-
-     .zoom-container {
-      overflow: hidden;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    /* Initial fade-in when page loads */
-    .zoom-container img {
-      width: 100%;
-      opacity: 0;
-      transform: scale(1); /* No zoom initially */
-      transition: transform 1s ease-out, opacity 1s ease-out;
-      animation: fadeIn 1s forwards;
-    }
-
-    /* Zoom effect on hover */
-    .zoom-container img:hover {
-      transform: scale(1.2); /* Zoom to 120% on hover */
-    }
-
-    /* Fade-in keyframes */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-	  
-    
+	     
 section {
             background-color: white;
             padding: 25px;
@@ -205,70 +174,6 @@ section {
     }
 }
 
-.Services-Back{
-width: 100%;
-}
-.Services-Back img{
-  
- width: 100%;
-    height: auto;
-    display: block;
-}
-
-.Services {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 40px;
-    background-color: #ebeeef;    
-    
-}
-
-/* Image styling */
-.Services .img img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    height: 300px;
-}
-
-/* Text styling */
-.Services .Services-text {
-    max-width: 600px;
-}
-
-.Services h2 {
-    color: #ff381e;
-    margin-bottom: 10px;
-}
-
-.Services p {
-    line-height: 1.6;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .Services {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-  .Services::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.1);
-    }
-.Service-Head{
-  text-align: center;
-  color:  #ffba0a;
-  background: #888686;
-  background: url('img/Background1.jpg') no-repeat center center/cover;
-}
-
 
 .read-more-btn {
     display: inline-block;
@@ -295,6 +200,57 @@ width: 100%;
       padding: 10px 0;
       background-color: rgb(215, 216, 217);
 }
+
+     .zoom-container {
+      overflow: hidden;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Initial fade-in when page loads */
+    .zoom-container img {
+      width: 100%;
+      opacity: 0;
+      transform: scale(1); /* No zoom initially */
+      transition: transform 1s ease-out, opacity 1s ease-out;
+      animation: fadeIn 1s forwards;
+    }
+
+    /* Zoom effect on hover */
+    .zoom-container img:hover {
+      transform: scale(1.2); /* Zoom to 120% on hover */
+    }
+
+    /* Fade-in keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+	  
+.services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .service {
+      flex: 1 1 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .service h4 {
+      margin-bottom: 10px;
+      color: #e91e63;
+    }
 
   </style>
 </head>
@@ -340,63 +296,37 @@ and Cleaning services.
     Nomo Trading & Projects
   </h1>
 
-<section class="Services" id="Service">
-  <article>
-    <div class="img">
-        <img src="img/Contract1.jpg" alt="Our Team">
-    </div>
-
-    <div class="Services-text">
-        <h2>The Construction and Maintenance business</h2>
-        <p>
-            Nomo Trading and Projects is dedicated to providing excellent services, supplies and advice since 2011. Drawing on its base of experiencedand skilled labour as well as up-to-dateequipment and other materialresources, Nomo Trading and Projectsis able to deliver quality serviceexpeditiously and seamlessly.
-        </p>
-    </div>
-    <nav class="Construct">
-    <a href="Construction.html" class="read-more-btn">Read More</a>
-    </nav>
-    <div>
+<section id="services">
+   <div class="zoom-container">
+    <article class="service">
+      <img src="img/Contract1.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>The Construction and Maintenance business</h4>
+         <p>
+        Nomo Trading and Projects is dedicated to providing excellent services, supplies and advice since 2011. Drawing on its base of experiencedand skilled labour as well as up-to-dateequipment and other materialresources, Nomo Trading and Projectsis able to deliver quality serviceexpeditiously and seamlessly.
+         </p>
+         <a href="Construction.html" class="read-more-btn">Read More</a>
+    </article>
     
-    </div>
+    <article class="service">
+      <img src="img/Clean.jpeg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>The Cleaning Business</h4>
+         <p>
+        We provide holistic (Garbage, Sanitary bins andJanitorial) cleaning services to commercial, industrialand residential properties in South Africa. Ourcleaning services focus on client specific andmeasurable outcomes which directly participates inthe improvement of the client’s perfomance,reputation and competitiveness.
+        We provide cleaning services tailored to suit eachclient with the wide range of services listed below:
+         </p>
+         <a href="Cleaning.html" class="read-more-btn">Read More</a>
     </article>
 
-    <article>
-    <div class="img">
-        <img src="img/Clean.jpeg" alt="Our Team">
-    </div>
-
-    <div class="Services-text">
-        <h2>The Cleaning Business</h2>
-        <p>
-            We provide holistic (Garbage, Sanitary bins andJanitorial) cleaning services to commercial, industrialand residential properties in South Africa. Ourcleaning services focus on client specific andmeasurable outcomes which directly participates inthe improvement of the client’s perfomance,reputation and competitiveness.
-We provide cleaning services tailored to suit eachclient with the wide range of services listed below:
-    </div>
-    <nav class="Construct">
-    <a href="Cleaning.html" class="read-more-btn">Read More</a>
-    </nav>
-    <div>
-    
-    </div>
+    <article class="service">
+      <img src="img/Fuel.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>The Fuel Business</h4>
+         <p>
+        Nomo Trading and Projects is in the industry to provide a wide range of quality and safe diesel as well as other fuel related products. We are in the diesel distribution and supply industry to make profits and we will ensure that we do all that is permitted by the law in South Africa, to achieve our business aim and objective.
+         </p>
+         <a href="Fuel.html" class="read-more-btn">Read More</a>
     </article>
 
-    <article>
-    <div class="img">
-        <img src="img/Fuel.jpg" alt="Our Team">
-    </div>
-
-    <div class="Services-text">
-        <h2>The Fuel Business</h2>
-        <p>
-            Nomo Trading and Projects is in the industry to provide a wide range of quality and safe diesel as well as other fuel related products. We are in the diesel distribution and supply industry to make profits and we will ensure that we do all that is permitted by the law in South Africa, to achieve our business aim and objective.
-		</p>
-    </div>
-		<nav class="Construct">
-        <a href="Fuel.html" class="read-more-btn">Read More</a>
-		</nav>
-    <div>
-    
-    </div>
-    </article>
+	 </div>
 </section>
 
 <!-- Footer with Social Links -->
