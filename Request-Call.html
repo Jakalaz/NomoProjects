@@ -10,97 +10,125 @@
 
   <script>
     (function () {
-      emailjs.init("JP-Lzv6mA1TowkcYJ"); // 👈 replace with your EmailJS public key
+      emailjs.init("JP-Lzv6mA1TowkcYJ"); // EmailJS public key
     })();
   </script>
 
   <style>
-    form {
-      max-width: 400px;
-      margin: auto;
+    /* Global page sizing */
+    body {
       font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      font-size: 18px;          /* ✅ Bigger base text */
+      margin: 0;
     }
-    input, textarea, button {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-    }
-    button {
-      background: #0078d4;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #005a9e;
-    }
- nav {
+
+    /* Navigation bar */
+    nav {
       background: linear-gradient(90deg, #0b3c5d, #d7263d);
-      padding: 14px;
+      padding: 18px;
       text-align: center;
     }
 
     nav a {
       color: #fff;
-      margin: 0 15px;
+      margin: 0 18px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 18px;
     }
 
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main container */
     .container {
-      max-width: 600px;
-      margin: 60px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 10px;
+      max-width: 650px;         /* ✅ Wider content */
+      margin: 80px auto;
+      background: #ffffff;
+      padding: 45px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
+    h2 {
+      text-align: center;
+      font-size: 28px;          /* ✅ Bigger heading */
+      margin-bottom: 30px;
+    }
+
+    /* Form inputs */
     input, textarea {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
+      padding: 14px;
+      font-size: 18px;          /* ✅ Bigger input text */
+      margin-bottom: 18px;
       border-radius: 6px;
       border: 1px solid #ccc;
     }
 
-    button {
-      width: 100%;
-      padding: 14px;
-      background: #e91e63;
-      border: none;
-      color: #fff;
-      cursor: pointer;
+    textarea {
+      resize: vertical;
     }
 
+    /* Button */
+    button {
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #c2185b;
+    }
+
+    /* Mobile improvements */
+    @media (max-width: 600px) {
+      .container {
+        margin: 40px 15px;
+        padding: 30px;
+      }
+    }
   </style>
 </head>
+
 <body>
-<nav>
-  <a href="Home.html">Home</a>
-  <a href="Services.html">Services</a>
-  <a href="About.html">About Us</a>
-  <a href="Contact.html">Contact Us</a>
-  <a href="Partners.html">Our Partners</a>
-</nav>
-<div >
-  <form id="contact-form">
-    <h2>Send Us A Message</h2>
 
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <input type="tel" name="phone" placeholder="Your Phone" />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  <nav>
+    <a href="Home.html">Home</a>
+    <a href="Services.html">Services</a>
+    <a href="About.html">About Us</a>
+    <a href="Contact.html">Contact Us</a>
+    <a href="Partners.html">Our Partners</a>
+  </nav>
 
-    <button type="submit">Send Message</button>
-  </form>
-</div>
+  <div class="container">
+    <form id="contact-form">
+      <h2>Send Us A Message</h2>
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone">
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
   <script>
     document.getElementById("contact-form").addEventListener("submit", function (event) {
       event.preventDefault();
 
       emailjs.sendForm(
-        "service_uzgv71w",   // 👈 replace
-        "template_kx3eo28",  // 👈 replace
+        "service_uzgv71w",
+        "template_kx3eo28",
         this
       ).then(
         function () {
