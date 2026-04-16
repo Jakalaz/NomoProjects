@@ -3,23 +3,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact Us</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
 
-  <!-- ✅ EmailJS v3 -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs@3/dist/email.min.js"></script>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      emailjs.init("JP-Lzv6mA1TowkcYJ"); // 👈 replace with your EmailJS public key
+    })();
+  </script>
 
   <style>
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: #f4f6f8;
-      margin: 0;
-      padding: 0;
+    form {
+      max-width: 400px;
+      margin: auto;
+      font-family: Arial, sans-serif;
     }
-
-    nav {
+    input, textarea, button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+    button {
+      background: #0078d4;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005a9e;
+    }
+ nav {
       background: linear-gradient(90deg, #0b3c5d, #d7263d);
       padding: 14px;
       text-align: center;
@@ -56,52 +71,48 @@
       color: #fff;
       cursor: pointer;
     }
+
   </style>
 </head>
-
 <body>
-
 <nav>
-  <a href="index.html">Home</a>
+  <a href="Home.html">Home</a>
   <a href="Services.html">Services</a>
   <a href="About.html">About Us</a>
   <a href="Contact.html">Contact Us</a>
   <a href="Partners.html">Our Partners</a>
 </nav>
+<div >
+  <form id="contact-form">
+    <h2>Send Us A Message</h2>
 
-<div class="container">
-  <h1>Request Here</h1>
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="tel" name="phone" placeholder="Your Phone" />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 
-  <form id="booking-form">
-    <input type="text" name="name" placeholder="Your Full Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Submit</button>
+    <button type="submit">Send Message</button>
   </form>
 </div>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
 
-<script>
-  emailjs.init("2D90Dl0QS7IfvW3tN");
-
-  document.getElementById("booking-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_v4ktjuu",
-      "template_kx3eo28",
-      this
-    ).then(
-      function () {
-        alert("Message sent successfully!");
-      },
-      function (error) {
-        console.error("EmailJS Error:", error);
-        alert("Email failed – check console.");
-      }
-    );
-  });
-</script>
+      emailjs.sendForm(
+        "service_uzgv71w",   // 👈 replace
+        "template_kx3eo28",  // 👈 replace
+        this
+      ).then(
+        function () {
+          alert("Message sent successfully!");
+          document.getElementById("contact-form").reset();
+        },
+        function (error) {
+          alert("Failed to send message.\n" + error.text);
+        }
+      );
+    });
+  </script>
 
 </body>
 </html>
