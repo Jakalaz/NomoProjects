@@ -2,106 +2,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Request Call</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 0;
-        }
+  <!-- ✅ EmailJS v3 -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs@3/dist/email.min.js"></script>
 
-        .container {
-            max-width: 600px;
-            margin: 60px auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
-        h1 {
-            text-align: center;
-            color: #0f2a44;
-        }
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 15px;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        button {
-            margin-top: 25px;
-            width: 100%;
-            padding: 14px;
-            background: #0f2a44;
-            color: #fff;
-            font-size: 16px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #143b61;
-        }
-
-nav {
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    nav {
       background: linear-gradient(90deg, #0b3c5d, #d7263d);
-      padding: 14px 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 14px;
       text-align: center;
     }
 
     nav a {
-      color: #ffffff;
+      color: #fff;
+      margin: 0 15px;
       text-decoration: none;
-      margin: 0 18px;
       font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: color 0.3s, border-bottom 0.3s;
     }
 
-    nav a:hover {
-      color: #eaf2ff;
-      border-bottom: 2px solid #ffffff;
-      padding-bottom: 4px;
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
     }
 
-.Divide{
-  position: sticky;
-      top: 0;
-      z-index: 999;
-      background: #0f0a0a;
-      text-align: center;
-      padding: 5px 0;
-      background-color: rgb(12, 28, 60);
-      image-rendering: crisp-edges;
-      left: 25%;
-}
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
 
-    </style>
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #e91e63;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -114,30 +69,39 @@ nav {
   <a href="Partners.html">Our Partners</a>
 </nav>
 
-<nav class="Divide">
-
-</nav>
-
 <div class="container">
-    <h1>Contact Us</h1>
+  <h1>Request Here</h1>
 
-    <form action="send-email.php" method="POST">
-        <label>Full Name</label>
-        <input type="text" name="name" required>
-
-        <label>Email Address</label>
-        <input type="email" name="email" required>
-
-        <label>Phone Number</label>
-        <input type="text" name="phone">
-
-        <label>Message</label>
-        <textarea name="message" required></textarea>
-
-        <button type="submit">Send Message</button>
-    </form>
-
+  <form id="booking-form">
+    <input type="text" name="name" placeholder="Your Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
 </div>
+
+<script>
+  emailjs.init("2D90Dl0QS7IfvW3tN");
+
+  document.getElementById("booking-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_v4ktjuu",
+      "template_kx3eo28",
+      this
+    ).then(
+      function () {
+        alert("Message sent successfully!");
+      },
+      function (error) {
+        console.error("EmailJS Error:", error);
+        alert("Email failed – check console.");
+      }
+    );
+  });
+</script>
 
 </body>
 </html>
