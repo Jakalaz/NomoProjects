@@ -23,35 +23,20 @@
       line-height: 1.6;
     }
 
-header {
-  position: relative;
-  height: 60vh;
-  color: #645c5c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    header {
+      position: relative;
+      background: url('img/Nomo.jpeg') no-repeat center center/cover;
+      height:60vh;
+      color: #645c5c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
 
-  background-size: cover;
-  background-position: center;
-  animation: bgSlider 15s infinite;
-}
+      /* Magic: gentle zoom + shift animation of the background */
+      animation: bgAnim 10s ease infinite alternate;
+    }
 
-/* Background image animation */
-@keyframes bgSlider {
-  0% {
-    background-image: url('img/Nomo.jpeg');
-  }
-  33% {
-    background-image: url('img/TeamNomo.jpg');
-  }
-  66% {
-    background-image: url('img/NomoTeam.jpeg');
-  }
-  100% {
-    background-image: url('img/Nomo.jpeg');
-  }
-}
     header .header-content {
       position: relative;
       z-index: 2;
@@ -402,7 +387,7 @@ section {
 .fly-in {
   opacity: 0;
   transform: translateX(-80px);
-  animation: flyIn 3s ease-out forwards;
+  animation: flyIn 1.2s ease-out forwards;
 }
 
 /* Animation keyframes */
@@ -417,58 +402,6 @@ section {
   }
 }
 
-.flip-container {
-  perspective: 1000px;
-  width: 400px;
-  height: 300px;
-}
-
-.flipper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  animation: flipAnim 8s infinite;
-}
-
-/* Images */
-.flipper img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  backface-visibility: hidden;
-}
-
-.front {
-  transform: rotateY(0deg);
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-
-/* ✅ FLIP + DELAY CONTROL */
-@keyframes flipAnim {
-  /* Front image stays visible */
-  0% {
-    transform: rotateY(0deg);
-  }
-  40% {
-    transform: rotateY(0deg);
-  }
-
-  /* Flip happens here */
-  60% {
-    transform: rotateY(180deg);
-  }
-
-  /* Back image stays visible */
-  100% {
-    transform: rotateY(180deg);
-  }
-}
 
   </style>
 </head>
@@ -505,13 +438,9 @@ section {
 </nav>
 
 <section class="image-text-section">
-  
-  <div class="img flip-container">
-    <div>
-      <img src="img/Truck.jpeg" >
+    <div class="img">
+        <img src="img/TeamNomo.jpg" alt="Our Team">
     </div>
-  </div>
-
 
    
 <div class="text fly-in">
