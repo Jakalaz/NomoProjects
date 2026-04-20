@@ -37,14 +37,6 @@
       animation: bgAnim 10s ease infinite alternate;
     }
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
-    }
-
     header .header-content {
       position: relative;
       z-index: 2;
@@ -277,17 +269,160 @@ section {
   background: url('img/Background1.jpg') no-repeat center center/cover;
 }
 
+
+  html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ================= NAVBAR ================= */
+    .nav-container {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: linear-gradient(90deg, #0b3c5d, #d7263d);
+      padding: 14px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 4px;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 4px;
+      width: 28px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    /* Mobile menu */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+    }
+
+    /* ================= OTHER STYLES (unchanged) ================= */
+
+    header {
+      position: relative;
+      background: url('img/Nomo.jpeg') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-text-section {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 40px;
+      background: url('img/Background.jpg') no-repeat center center/cover;
+    }
+
+    .image-text-section img {
+      max-width: 400px;
+      height: 300px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .image-text-section {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .Service-Head {
+      text-align: center;
+      color: #ffba0a;
+      background: url('img/Background1.jpg') no-repeat center center/cover;
+    }
+
+    
+/* Fly-in animation */
+.fly-in {
+  opacity: 0;
+  transform: translateX(-80px);
+  animation: flyIn 1.2s ease-out forwards;
+}
+
+/* Animation keyframes */
+@keyframes flyIn {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="Services.html">Services</a>
-  <a href="About.html">About Us</a>
-  <a href="Contact.html">Contact Us</a>
-  <a href="Partners.html">Our Partners</a>
-  <a href="Request-Call.html">Send Request</a>
-</nav>
+
+<div class="nav-container">
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navMenu">
+    <a href="Services.html">Services</a>
+    <a href="About.html">About Us</a>
+    <a href="Contact.html">Contact Us</a>
+    <a href="Partners.html">Our Partners</a>
+    <a href="Quote.html">Request Call</a>
+  </nav>
+</div>
 
 <header>
   <div class="header-content">
@@ -307,13 +442,18 @@ section {
         <img src="img/TeamNomo.jpg" alt="Our Team">
     </div>
 
-    <div class="text">
-        <h2>Nomo Trading & Projects</h2>
-        <p>
-            Nomo Trading and Projects is a company that is 100% blackowned. The company was established in 2011. It is a private registered company that boast 50% woman share-holding. Nomo Trading is located in Malelane, Mpumalanga province under the Nkomazi Local Municipality. Nomo Trading and Projects operatesin Construction
-            and Cleaning services.
-        </p>
-      </div>
+   
+<div class="text fly-in">
+  <h2>Nomo Trading & Projects</h2>
+  <p>
+    Nomo Trading and Projects is a company that is 100% blackowned. The company was
+    established in 2011. It is a private registered company that boast 50% woman
+    share-holding. Nomo Trading is located in Malelane, Mpumalanga province under
+    the Nkomazi Local Municipality. Nomo Trading and Projects operates in Construction
+    and Cleaning services.
+  </p>
+</div>
+
 </section>
 
   <h1 class="Service-Head">
@@ -326,7 +466,7 @@ section {
       ,<a href="Construction.html">
         <img src="img/GeneralB1.jpeg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
       </a>
-        <h4>The Construction and Maintenance Division</h4>
+        <h4>The Construction and Maintenance business</h4>
          <p>
         Nomo Trading and Projects is dedicated to providing excellent services, supplies and advice since 2011. Drawing on its base of experienced and skilled labour as well as up-to-date equipment and other material resources, Nomo Trading and Projects is able to deliver quality service expeditiously and seamlessly.
          </p>
@@ -337,7 +477,7 @@ section {
       <a href="Cleaning.html">
         <img src="img/LandScap1.jpeg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
       </a>
-        <h4>The Cleaning Division</h4>
+        <h4>The Cleaning Business</h4>
          <p>
         We provide holistic (Garbage, Sanitary bins and Janitorial) cleaning services to commercial, industrial and residential properties in South Africa. Our cleaning services focus on client specific and measurable outcomes which directly participates in the improvement of the client’s perfomance,reputation and competitiveness.
         We provide cleaning services tailored to suit each client with the wide range of services listed below:
@@ -349,7 +489,7 @@ section {
       <a href="Logistics.html">
         <img src="img/Truck1.jpeg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
       </a>
-        <h4>The Logistics Division</h4>
+        <h4>The Logistics Business</h4>
          <p>
         At Nomo Logistics, we don’t just move goods; we optimize your entire supply chain for speed, cost, and reliability. Our transportation and distribution services are designed to bridge the gap between global manufacturing and your customer’s doorstep, ensuring your goods are always where they need to be.
          </p>
@@ -360,7 +500,7 @@ section {
       <a href="Fuel.html">
         <img src="img/Fuel.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
       </a>
-        <h4>The Fuel Division</h4>
+        <h4>The Fuel Business</h4>
          <p>
         Nomo Trading and Projects is in the industry to provide a wide range of quality and safe diesel as well as other fuel related products. We are in the diesel distribution and supply industry to make profits and we will ensure that we do all that is permitted by the law in South Africa, to achieve our business aim and objective.
          </p>
@@ -377,6 +517,13 @@ section {
   <p>📧 Email: <a href="mailto:cgumbi@nomoprojects.co.za" style="color: #ccc;">cgumbi@nomoprojects.co.za</a></p>
   <p>&copy; 2011 – Present | Nomo Trading and Projects</p>
 </footer>
+
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+</script>
 
 
 </body>
