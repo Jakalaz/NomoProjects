@@ -23,28 +23,6 @@
       line-height: 1.6;
     }
 
-    header {
-      position: relative;
-      background: url('img/Nomo.jpeg') no-repeat center center/cover;
-      height:60vh;
-      color: #645c5c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-
-      /* Magic: gentle zoom + shift animation of the background */
-      animation: bgAnim 10s ease infinite alternate;
-    }
-
-    header .header-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 0 20px;
-    }
-
-
     nav {
       position: sticky;
       top: 0;
@@ -346,14 +324,25 @@ section {
 
     /* ================= OTHER STYLES (unchanged) ================= */
 
-    header {
-      position: relative;
-      background: url('img/Nomo.jpeg') no-repeat center center/cover;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+
+/* Keyframes for 3 images */
+@keyframes slideBg {
+  0% {
+    background-image: url('img/Nomo.jpeg');
+  }
+  20% {
+    background-image: url('img/Truck1.jpeg');
+  }
+  40% {
+    background-image: url('img/Nomo1.jpeg');
+  }
+  60% {
+    background-image: url('img/Truck.jpeg');
+  }
+  100% {
+    background-image: url('img/Nomo.jpeg');
+  }
+}
 
     .image-text-section {
       display: flex;
@@ -402,6 +391,41 @@ section {
   }
 }
 
+header {
+  position: relative;
+  height: 60vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Background slideshow layer */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: slideBg 40s infinite;
+  z-index: 1;
+}
+
+/* Optional dark overlay for readability */
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.header-content {
+  position: relative;
+  z-index: 3;
+}
 
   </style>
 </head>
@@ -429,6 +453,7 @@ section {
     
   </div>
 </header>
+
 <nav class="Divide">
 
 <div class="slider">
